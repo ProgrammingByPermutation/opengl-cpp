@@ -15,6 +15,10 @@ add_library(GLAD STATIC "ch7/glad.c" "../../../../cpp/include/glad/glad.h")
 configure_file(configuration/root_directory.h.in configuration/root_directory.h)
 include_directories(${CMAKE_BINARY_DIR}/configuration)
 
+file(COPY resources DESTINATION Debug/resources)
+file(COPY ch7/4.1.texture.fs DESTINATION Debug)
+file(COPY ch7/4.1.texture.vs DESTINATION Debug)
+
 # Add main entrypoint of application
 add_executable(Tutorial ch7/main.cpp)
 
